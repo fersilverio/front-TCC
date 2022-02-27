@@ -9,26 +9,26 @@
                     <div class="row">   
                         <div class="col-md-4">
                             <label for="idade">Idade:</label>
-                            <input type="number" class="form-control" id="idade" placeholder="ex: 27">
+                            <input type="number" class="form-control" id="idade" placeholder="ex: 27" v-model="idade">
                         </div>
                         <div class="col-md-4">
                             <label for="altura">Altura:</label>
-                            <input type="number" class="form-control" id="altura" placeholder="ex: 1,77">
+                            <input type="number" class="form-control" id="altura" placeholder="ex: 1,77" v-model="altura">
                         </div>
                         <div class="col-md-4">
                             <label for="peso">Peso:</label>
-                            <input type="number" class="form-control" id="peso" placeholder="ex: 78">
+                            <input type="number" class="form-control" id="peso" placeholder="ex: 78" v-model="peso">
                         </div>
                     </div>
                     <br>
                     <div class="row">
                         <div class="col-md-6">
                             <label for="glicemia">Nível glicêmico:</label>
-                            <input type="number" class="form-control" id="glicemia" placeholder="ex: 123,6">
+                            <input type="number" class="form-control" id="glicemia" placeholder="ex: 123,6" v-model="nivelGlicemico">
                         </div>
                         <div class="col-md-6">
                             <label for="tabagismo">Sobre histórico de tabagismo:</label>
-                            <select class="form-control" id="tabagismo">
+                            <select class="form-control" id="tabagismo" v-model="tabagismo">
                                 <option>Fumo</option>
                                 <option>Já fumei por um período</option>
                                 <option>Nunca fumei</option>
@@ -46,11 +46,11 @@
                             <label for="hiper">Histórico de hipertensão: </label>
                             <br>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="hipertensao" id="hiper1" value="True">
+                                <input class="form-check-input" type="radio" name="hipertensao" id="hiper1" value="1" v-model="selecionadoHipertensao">
                                 <label class="form-check-label" for="hiper1">Sim</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="hipertensao" id="hiper2" value="False">
+                                <input class="form-check-input" type="radio" name="hipertensao" id="hiper2" value="0" v-model="selecionadoHipertensao">
                                 <label class="form-check-label" for="hiper2">Não</label>
                             </div>
                         </div>
@@ -61,11 +61,11 @@
                             <label for="card">Histórico de doença cardíaca: </label>
                             <br>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="card" id="card1" value="True">
+                                <input class="form-check-input" type="radio" name="card" id="card1" value="1" v-model="selecionadoDoencaCard">
                                 <label class="form-check-label" for="card1">Sim</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="card" id="card2" value="False">
+                                <input class="form-check-input" type="radio" name="card" id="card2" value="0" v-model="selecionadoDoencaCard">
                                 <label class="form-check-label" for="card2">Não</label>
                             </div>
                         </div>
@@ -76,11 +76,11 @@
                             <label for="gender">Gênero: </label>
                             <br>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" id="gender1" value="0">
+                                <input class="form-check-input" type="radio" name="gender" id="gender1" value="0" v-model="selecionadoGeneroMasc">
                                 <label class="form-check-label" for="gender1">Feminino</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" id="gender2" value="1">
+                                <input class="form-check-input" type="radio" name="gender" id="gender2" value="1" v-model="selecionadoGeneroMasc">
                                 <label class="form-check-label" for="gender2">Masculino</label>
                             </div>
                         </div>
@@ -91,7 +91,7 @@
         <div class="container custom">
             <div class="row">
                 <div class="col-md-12 justify-content: center">
-                    <button class="btn btn-success btn-lg">Enviar</button>
+                    <button @click="teste()" class="btn btn-success btn-lg">Enviar</button>
                 </div>
             </div>
         </div>
@@ -101,8 +101,32 @@
 <script>
 
 export default {
+    
+    data () {
+        return {
+            idade: 0,
+            altura: 0,
+            peso: 0,
+            nivelGlicemico: 0,
+            tabagismo: "",
+            selecionadoHipertensao: 0,
+            selecionadoDoencaCard: 0,
+            selecionadoGeneroMasc: 0 
+        }
+    },
+    
+    
     methods: {
-        
+        teste(){
+            console.log(this.idade)
+            console.log(this.altura)
+            console.log(this.peso)
+            console.log(this.nivelGlicemico)
+            console.log(this.tabagismo)
+            console.log(this.selecionadoHipertensao)
+            console.log(this.selecionadoDoencaCard)
+            console.log(this.selecionadoGeneroMasc)
+        }
     },
 }
 </script>
