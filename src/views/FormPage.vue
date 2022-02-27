@@ -124,16 +124,25 @@ export default {
     
     
     methods: {
-        teste(){
-            console.log(this.idade)
-            console.log(this.altura)
-            console.log(this.peso)
-            console.log(this.nivelGlicemico)
-            console.log(this.tabagismo)
-            console.log(this.selecionadoHipertensao)
-            console.log(this.selecionadoDoencaCard)
-            console.log(this.selecionadoGeneroMasc)
-        }
+        // teste(){
+        //     console.log(this.idade)
+        //     console.log(this.altura)
+        //     console.log(this.peso)
+        //     console.log(this.nivelGlicemico)
+        //     console.log(this.tabagismo)
+        //     console.log(this.selecionadoHipertensao)
+        //     console.log(this.selecionadoDoencaCard)
+        //     console.log(this.selecionadoGeneroMasc)
+
+        //     let saida = ""
+            
+        //     saida += "rust"
+        //     saida += " é legal"
+           
+
+        //     console.log(saida)
+
+        // }
     },
 }
 </script>
