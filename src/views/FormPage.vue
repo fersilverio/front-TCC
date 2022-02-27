@@ -101,17 +101,24 @@
 <script>
 
 export default {
+    /*
+        TODO: Criar a estrutura de conexão com a API
+        TODO: Criar a lógica para calcular o IMC
+        TODO: Criar o método que concentrará os dois todos acima
     
+    
+    
+    */ 
     data () {
         return {
-            idade: 0,
-            altura: 0,
-            peso: 0,
-            nivelGlicemico: 0,
+            idade: "",
+            altura: "",
+            peso: "",
+            nivelGlicemico: "",
             tabagismo: "",
-            selecionadoHipertensao: 0,
-            selecionadoDoencaCard: 0,
-            selecionadoGeneroMasc: 0 
+            selecionadoHipertensao: "",
+            selecionadoDoencaCard: "",
+            selecionadoGeneroMasc: "" 
         }
     },
     
