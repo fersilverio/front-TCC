@@ -2,7 +2,7 @@ import http from '../http/http-common'
 
 class DataService {
     getProb(entrada){
-        return http.post(entrada)
+        return http.post('/',entrada)
     }
 }
 
