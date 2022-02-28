@@ -1,6 +1,5 @@
 <template>
     <div>
-       
         <div class="container custom" style="">
             <h1>Questionário de avaliação</h1>
             <p>Insira nos campos abaixo os dados requisitados</p>
@@ -91,7 +90,7 @@
         <div class="container custom">
             <div class="row">
                 <div class="col-md-12 justify-content: center">
-                    <button @click="teste()" class="btn btn-success btn-lg">Enviar</button>
+                    <button @click="form()" class="btn btn-success btn-lg">Enviar</button>
                 </div>
             </div>
         </div>
@@ -100,10 +99,12 @@
 
 <script>
 
+import { isIMCabaixoIdeal, histTabagismo, isHipoNormal, isJovemAdulto } from '../util/dataValidation'
+
+
 export default {
     /*
         TODO: Criar a estrutura de conexão com a API
-        TODO: Criar a lógica para calcular o IMC
         TODO: Criar o método que concentrará os dois todos acima
     
     
@@ -124,25 +125,26 @@ export default {
     
     
     methods: {
-        // teste(){
-        //     console.log(this.idade)
-        //     console.log(this.altura)
-        //     console.log(this.peso)
-        //     console.log(this.nivelGlicemico)
-        //     console.log(this.tabagismo)
-        //     console.log(this.selecionadoHipertensao)
-        //     console.log(this.selecionadoDoencaCard)
-        //     console.log(this.selecionadoGeneroMasc)
 
-        //     let saida = ""
-            
-        //     saida += "rust"
-        //     saida += " é legal"
-           
+        form(){
+            let saida = ""
+            // Se for masculino estará como 1, senão 0
+            saida += this.selecionadoGeneroMasc
+            // Se houver historico de doença cardíaca adicionado 1, senão 0
+            saida += this.selecionadoDoencaCard
+            // Se a pessoa fuma ou ja fumou 1, senão 0
+            saida += histTabagismo(this.tabagismo)
+            // Se a pessoa esta abaixo do peso ou no peso ideal 1, senão 0
+            saida += isIMCabaixoIdeal(this.altura, this.peso)
+            // Se a pessoa está hipoglicemica ou com glicemia normal 1, senão 0
+            saida += isHipoNormal(this.nivelGlicemico)
+            // Se for jovem ou adulto 1, senão 0
+            saida += isJovemAdulto(this.idade)
+            // Se houver historico de hipertensão adicionado 1, senão 0
+            saida += this.selecionadoHipertensao
+            console.log(saida)
 
-        //     console.log(saida)
-
-        // }
+        }
     },
 }
 </script>
