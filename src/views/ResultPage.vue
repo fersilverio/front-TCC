@@ -1,9 +1,9 @@
 <template>
     <div class="container-fluid container-principal">
         <div>
-            <h1 v-if="resultado != ''" class="titulo">Resultado da predição</h1>
+            <h1 v-if="resultadoCalculado" class="titulo">Resultado da predição</h1>
         </div>
-        <div v-if="resultado == ''" class="container container-loading">
+        <div v-if="!resultadoCalculado" class="container container-loading">
             <p class="texto-loading">Aguardando resultado</p>
             <div class="spinner-grow text-success" role="status">
                 <span class="sr-only">Loading...</span>
@@ -52,7 +52,8 @@ export default {
     data(){
         return {
             entrada: this.$route.query.saidaForm,
-            resultado: ""
+            resultado: "",
+            resultadoCalculado: false
         }
     },
     
@@ -61,8 +62,11 @@ export default {
             DataService.getProb(this.entrada)
                 .then((res)  => {
                     this.resultado = res.data.probabilidade * 100
+                    this.resultadoCalculado = true
                 })
-                .catch()
+                .catch(err => {
+                    console.log(err)
+                })
         },
 
         goToFormPage(){
