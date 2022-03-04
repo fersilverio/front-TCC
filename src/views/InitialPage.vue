@@ -11,11 +11,11 @@
         </div>
         <br>
         <br>
-        <div class="row" style="margin-left: 140px;">
+        <div class="row" style="margin-left: 160px;">
             <div class="col-sm">
             </div>
             <div class="col-sm">
-                <button class="btn btn-success" @click="goToDescription()">INICIAR</button>
+                <button class="btn btn-success" @click="goToForm()">INICIAR</button>
             </div>
             <div class="col-sm">
             </div>
@@ -28,17 +28,15 @@
 
 export default{
     methods: {
-        goToDescription(){
-            this.$router.replace({name: 'descricao'})
-        }
+        goToForm(){
+            this.$router.replace({name: 'formulario'})
+        },
     }
 }
 
 
 </script>
 
-
-
-<style scoped>
+<style>
     
 </style>

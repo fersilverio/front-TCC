@@ -17,12 +17,6 @@ const routes = [
   },
 
   {
-    path: '/desc',
-    name: 'descricao',
-    component: () => import("../views/AppDescriptionPage")
-  },
-
-  {
     path: '/result',
     name: 'resultado',
     component: () => import("../views/ResultPage")
