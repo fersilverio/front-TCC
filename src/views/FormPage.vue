@@ -1,7 +1,10 @@
 <template>
     <div>
+      <navbar :titulo="this.titulo"></navbar>  
+
+
         <div class="container custom" style="">
-            <h1 class="titulo">Questionário de avaliação</h1>
+            
             <div class="container">
                 <br>
                 <div class="row">
@@ -103,9 +106,13 @@
 
 import { isIMCabaixoIdeal, histTabagismo, isHipoNormal, isJovemAdulto } from '../util/dataValidation'
 import Swal from 'sweetalert2'
-
+import Navbar from '../components/Navbar.vue'
 
 export default {
+    components: {
+        Navbar,
+    },
+
     created(){
         this.descricao()
     },
@@ -120,7 +127,8 @@ export default {
             selecionadoHipertensao: "",
             selecionadoDoencaCard: "",
             selecionadoGeneroMasc: "",
-            saidaForm: "" 
+            saidaForm: "",
+            titulo: 'Questionário de avaliação' 
         }
     },
     
@@ -182,7 +190,7 @@ export default {
     @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&display=swap');
 
     
-    .titulo{
+    .titulo-nav{
         font-family: 'League Spartan', sans-serif;
         font-size: 60px;
         color: #109b3a;
@@ -217,5 +225,15 @@ export default {
         outline: 0 none;
     }
    
+   @media(max-width: 767px){
+        .label{
+            font-size: 25px;
+            color: #109b3a;
+            font-family: 'League Spartan', sans-serif;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+   }
 
 </style>
