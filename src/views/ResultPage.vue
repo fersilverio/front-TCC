@@ -131,7 +131,7 @@ export default {
     }
 
     .container-principal{
-        margin: 50px;
+        /* margin: 50px; */
         width: 85%;
     }
 
