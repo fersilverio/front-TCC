@@ -11,7 +11,7 @@ exports.isIMCabaixoIdeal = (altura, peso) => {
 }
 
 exports.isHipoNormal = (nivelGlicemico) => {
-    if(nivelGlicemico <= 70 || nivelGlicemico < 99){
+    if(nivelGlicemico == "Sou considerado(a) hipoglicêmico(a) (glicemia abaixo do normal)" || nivelGlicemico == "Minha glicemia é considerada normal"){
         return '1'
     }
     else{

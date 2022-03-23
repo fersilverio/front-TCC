@@ -32,7 +32,7 @@
                             </div>
                         </div>
                         <div class="col-md-8 distancia">
-                            <p class="font paragrafo">O resultado apresentado significa que o cenário montado com os seus dados foi analisado e conclui-se que em <span style="color:#109b3a;">{{resultado}}%</span> o AVC aconteceu.</p>
+                            <p class="font paragrafo">O resultado apresentado significa que o cenário montado com os seus dados foi analisado e conclui-se que em <span style="color:#109b3a;">{{resultado}}%</span> das pessoas cadastradas na base com perfil similar tiveram AVC.</p>
                             <button @click="goToFormPage()" class="btn btn-success font botoes">Repetir</button>
                             <button @click="goToInitialPage()" class="btn btn-danger font botoes">Sair</button>
                         </div>
